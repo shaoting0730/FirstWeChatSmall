@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/dynamic/dynamic",
+    "pages/logs/logs",
+    "pages/find/find",
+    "pages/information/information",
+    "pages/mine/mine"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarTitleText": "品味点评",
+    "navigationBarBackgroundColor": "#FF3030",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#FF3030",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+
+    "list": [{
+      "pagePath": "pages/dynamic/dynamic",
+      "iconPath": "image/faxian.png",
+      "selectedIconPath": "image/found_ion@3x.png",
+      "text": "动态"
+    } ,{
+      "pagePath": "pages/find/find",
+      "iconPath": "../../image/gpin_icon@3x.png",
+      "selectedIconPath": "image/pin_icon@3x.png",
+      "text": "发现"
+    },{
+      "pagePath": "pages/information/information",
+      "iconPath": "../../image/gnews_icon@3x.png",
+      "selectedIconPath": "image/news_icon@3x.png",
+      "text": "资讯"
+    },{
+      "pagePath": "pages/mine/mine",
+      "iconPath": "../../image/gwo_icon@3x.png",
+      "selectedIconPath": "image/woicon@3x.png",
+      "text": "我的"
+    }]
+  },
+  "debug": true
+}
