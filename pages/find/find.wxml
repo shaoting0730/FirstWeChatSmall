@@ -1,10 +1,47 @@
-<!--mine.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">我的</text>
-  </view>
+<!--find.wxml-->
+<!--
+  swiper属性
+  indicator-dots 是否显示圆点
+  autoplay 是否自动切换
+  interval 间隔时间
+  duration 滑动时长
+-->
+
+<view class="dynamic">
+    <view>
+         <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+               <block wx:for-items="{{images}}">
+                   <swiper-item catchtap="gos">
+                      <image src="{{item}}" class="slide-image"/>
+                  </swiper-item>
+                </block>
+         </swiper>
+     </view>
+
+    <view class="text">
+        <view class="line_flag"></view>
+        <text>正在上映</text>
+    </view>
+
+<view>
+    <block wx:for-items="{{items}}">
+        <view class="flex item">
+            <view class="item_left">
+                <image src="{{item.image}}"/>
+            </view>
+            <view class="flex_auto item_middle">
+                <view><text class="title">{{item.title}}</text></view>
+                <view><text class="sub_title">{{item.subTitle}}</text></view>
+                <view><text class="actor">{{item.actor}}</text></view>
+            </view>
+            <view class="item_right">
+                <view><text class="score">{{item.score}}</text></view>
+                <view><text class="action">{{item.action}}</text></view>
+            </view>
+        </view>
+    </block>
+ </view>
+       
+
 </view>

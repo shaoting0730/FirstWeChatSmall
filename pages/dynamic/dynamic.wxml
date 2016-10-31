@@ -1,10 +1,21 @@
-<!--mine.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">我的</text>
-  </view>
+<!--dynamic.wxml-->
+<view class="dynamic">
+        <view class="dynamic section_gap swiper_box">
+            <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:for-items="{{images}}">
+                        <swiper-item catchtap="gos">
+                            <image src="{{item}}" class="slide-image"/>
+                        </swiper-item>
+                    </block>
+                </swiper>
+        </view>
+        <view class="dynamic dynamic-nav">
+                <block wx:for-items="{{navs}}">
+                    <view class="l-c-c" catchtap="go" data-type="{{item.text}}">
+                        <image src="{{item.image}}" class="slide-image"/>
+                        <text>{{item.text}}</text>
+                    </view>
+                </block>
+        </view> 
 </view>

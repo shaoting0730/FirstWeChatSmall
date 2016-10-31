@@ -1,13 +1,10 @@
-//dynamic.js
+//mine.js
 //获取应用实例
 var app = getApp()
 Page({
   data: {
-    motto: '首页',
-    userInfo: {
-      avatarUrl:'../../image/found_ion@3x.png',
-      nickName:'少停'
-    }
+    motto: '我的',
+    userInfo: {}
   },
   //事件处理函数
   bindViewTap: function() {

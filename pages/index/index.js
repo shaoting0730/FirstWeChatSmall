@@ -1,9 +1,9 @@
-//information.js
+//index.js
 //获取应用实例
 var app = getApp()
 Page({
   data: {
-    motto: '资讯',
+    motto: 'Hello World.hello',
     userInfo: {}
   },
   //事件处理函数
@@ -25,3 +25,4 @@ Page({
     })
   }
 })
+
