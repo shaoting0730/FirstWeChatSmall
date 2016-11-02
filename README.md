@@ -4,10 +4,10 @@
 因为山寨的demo地址实在太多,在此就不一一贴出了.<br/>
 -----------------------------------------------------------------<br/>
 演示效果:<br/><br/>
-![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/0.png) </br>
+![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/0.png) 
 ![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/1.png) 
 ![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/2.png) 
-![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/3.png) </br>
+![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/3.png) 
 ![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/4.png) 
 ![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/5.png) 
-![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/6.png) </br>
+![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/6.png) 
