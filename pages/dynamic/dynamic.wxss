@@ -6,10 +6,66 @@ view.section {
   /*display: block;*/
   /*width: 100%;*/
 }
+/*专栏*/
+.themes-box{ 
+  display: block; 
+  }
+.themes-box-top{ 
+  text-align: center; 
+  padding-bottom: 16px; 
+  padding-top: 16px; 
+  background: #F9F9F9; 
+  }
+.themes-box-title{ 
+  font-size: 16px; 
+  font-weight: 500; 
+  display: block; 
+  }
+  .scroll-text{
+    font-size: 16px; 
+    font-weight: 500; 
+    display: block;
+    text-align: center;
+  }
+.themes-box-subtitle{ 
+  font-size: 12px; 
+  color: #666; 
+  display: block; 
+  margin-top: 4px; 
+  }
+  .img-poster{
+    margin: 1rpx;
+    padding-left: 0rpx;
+    padding-right: 0px;
+    text-align: center;
+    box-sizing: border-box;
+}
+  /*日报列表*/
+/* 日报列表 */
+.themes-list{ background: #FFF; display: block; margin-bottom: 20px; }
+.themes-list-box{ display: block; position: relative; padding: 16px 20px; border-bottom: 1px solid #F2F2F2; }
+.themes-list-thumbnail{ position: absolute; left: 20px; top: 16px; height: 40px; width: 40px; }
+.themes-list-img{ width: 40px; height: 40px; border-radius: 4px; border: 1px solid #F2F2F2;}
+.themes-list-main{ margin-left: 50px; }
+.themes-list-name{ font-size: 14px; color: #444; height: 20px; line-height: 20px; overflow: hidden; }
+.themes-list-description{ font-size: 12px; color: #999; height: 20px; line-height: 20px; overflow: hidden; }
+
+
+
 
 /*轮播*/
+.on{ 
+  border-bottom: 1px solid #FF3030; 
+  color: #FF3030; 
+  }
+.swiper-box{ 
+ display: block; 
+height: 100%; 
+width: 100%; 
+overflow: hidden; 
+}
 .swiper_box {
-  /*width: 100%;*/
+  width: 100%;
   height: 200px;
 }
 swiper.swiper {
@@ -26,6 +82,24 @@ swiper.swiper {
   overflow: hidden;
 }
 
+.swiper-tab{ 
+  height: 30px; 
+  line-height: 30px; 
+  background: #FFF; 
+  display: flex; 
+  position: relative; 
+  z-index: 2; 
+  border-bottom: 1px solid #F4F4F4; 
+  flex-direction:row; 
+  justify-content:center; 
+  align-items:center;
+  }
+.swiper-tab-list{ 
+  margin: 0 20px;  
+padding: 0 4px; 
+font-size: 28rpx; 
+font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif 
+}
 
 /*分类*/
 .dynamic-nav {
@@ -80,8 +154,153 @@ view.text text {
   margin-left: 10px;
   line-height: 18px;
 }
+.nav {
+  display: flex;
+  margin: 10px;
+  
+}
+.col3-img-list{
+    width: 100%;
+    white-space: nowrap;
+    margin: 2rpx;
+}
+.col3-img{
+    display: inline-block;
+    margin: 0 1px;
+}
+.c3-actual-img{
+    width: 130px;
+    height: 180px;
+}
 
 .item {
   margin-bottom: 7px;
   height: 126px;
+}
+.hot-box{ display: block; height: 100%; font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif }
+.hot-box-main{ display: block; overflow: hidden; margin-bottom: 20px; background: #FFF; }
+
+.hot-main{ height: 50px; background: url("../../static/001.jpg") #FFF no-repeat 0 50%; background-size: cover; padding: 30px 20px; position: relative; z-index: 1; }
+.hot-main::before{ position: absolute; top: 0; bottom: 0; left: 0; right: 0; content: ''; background-image: linear-gradient(180deg, rgba(0,0,0,0.05) 5%,rgba(0,0,0,0.85) 100%); }
+
+.hot-main-box{ position: relative; z-index: 2; }
+.hot-main-title{ color: #FFF; font-size: 34rpx;  }
+.hot-main-subtitle{ color: #FFF; font-size: 26rpx; margin-top: 4px; }
+
+.hot-box-top{ padding: 20px; border-bottom: 1px solid #F6F6F6; text-align: center; }
+.hot-box-title{ font-size: 32rpx; height: 30px; line-height: 32px; font-weight: 400; color: #444; padding: 5px 10px; border: 1px solid #444; }
+
+/*音乐播放*/
+.title {
+      padding-top:20rpx;
+      padding-bottom: 5rpx;
+      width: 100%;
+      text-align: center;
+      border-bottom:1rpx solid #aaa;
+    }
+
+    .list-scroll{
+
+      height:1080rpx;
+    }
+    .list {
+      overflow: hidden;
+      padding:20rpx;
+      border-bottom: 1rpx solid #ddd;
+    }
+    .list.select {
+      color : green;
+    }
+    .list .icon{
+      width:50rpx;
+      height:50rpx;
+      border-radius: 50%;
+      background-color:#FF7200;
+      float: left;
+      text-align: center;
+      line-height: 50rpx;
+    }
+    .list .icon.nobg{
+      background: none;
+    }
+    .list .name {
+      float:left;
+      margin-left:10rpx;
+    }
+
+    .play-controller {
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:100rpx;
+      background-color: black;
+    }
+    .play-controller image {
+      width:100rpx;
+      height:100rpx;
+      float:left;
+    }
+    .play-controller text{
+      color:white;
+      float: left;
+      margin:20rpx 0 0 20rpx;
+    }
+    .music-type-title{
+  font-size: 24rpx;
+  color: #1f1f1f;
+}
+
+.music-section{
+   width: 25%;
+   float:left;
+   padding: 26rpx 0;
+}
+
+.music-section__ctn {
+  margin: 0 auto;
+  text-align: center;
+}
+.music-section__title{
+  text-align: center;
+  font-size: 20rpx;
+  margin-top: 10rpx;
+  color: #1f1f1f;
+}
+.music-section__ctn image{
+   width: 40rpx; height: 40rpx;
+}
+
+.music-main{
+  position:absolute;
+  width:100%;
+  height: 40%;
+  background-color: black;
+  color:white;
+  margin:0 auto;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+  display:-webkit-flex;
+}
+.singer-pic{
+  background: url('../../res/img/logo_music.png') no-repeat;
+  background-size:100%;
+  border-radius:50%;
+  border: 1px solid  #fff;
+  transform:rotate(0deg);
+  -ms-transform:rotate(0deg); 	/* IE 9 */
+  -moz-transform:rotate(0deg); 	/* Firefox */
+  -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+  -o-transform:rotate(0deg);
+}
+.music-bottom{
+    position: absolute;
+    bottom:0rpx;
+    width:100%;
+    min-height: 60%;
+    background:white;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

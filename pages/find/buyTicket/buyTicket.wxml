@@ -1,0 +1,38 @@
+<!--buyTicket.wxml-->
+<block wx:if="{{showLoading}}">
+    <view class="page-loading">
+        <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+    </view>
+</block>
+<block wx:else>
+    <scroll-view  scroll-y="true" style="height: 100%;"  bindscroll="scroll" bindscrolltolower="loadloadMore" bindscrolltoupper="refresh" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <block wx:key="*this" wx:for-items="{{items}}">
+            <view class="flex item">
+                <view class="flex_auto item_left">
+                    <view><text class="title">{{item.title}}</text></view>
+                    <view><text class="sub_title">{{item.subTitle}}</text></view>
+                    <view><text class="tag">{{item.tag}}</text></view>
+                </view>
+
+                <view class="item_right">
+                    <view><text class="price">{{item.price}}</text></view>
+                    <view><text class="buy" catchtap="chooseSeat">选座</text></view>
+                </view>
+            </view>
+        </block>
+        <view class="load-more-wrap">
+            <block wx:if="{{hasMore}}">
+                <view class="load-content">
+                    <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="load-content">
+                    <text>没有更多内容了</text>
+                </view>
+            </block>
+        </view>
+
+    </scroll-view>
+
+</block>

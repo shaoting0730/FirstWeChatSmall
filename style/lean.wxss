@@ -1,0 +1,159 @@
+html {
+	font-size: 62.5%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+body, button, input, select, textarea {
+	font-size: 1.4rem;
+	line-height: 1;
+	font-family: "Microsoft YaHei";
+}
+ul li, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	outline: none;
+	color: #333;
+}
+a:hover {
+	text-decoration: underline;
+}
+i, em {
+	font-style: normal;
+}
+input, textarea, select, a:focus {
+	outline: none;
+}
+input {
+	-webkit-appearance: none;
+}
+img {
+	max-width: 100%;
+}
+
+.hide{
+	display: none;
+}
+.box-sizing{
+	box-sizing:border-box;
+}
+
+
+.col {
+	width: 100%
+}
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-2-2, .col-3-3, .col-4-4, .col-5-5 {
+	display: block;
+	float: left
+}
+.col-1 {
+	width: 10%;
+}
+.col-2 {
+	width: 20%;
+}
+.col-3 {
+	width: 30%;
+}
+.col-4 {
+	width: 40%;
+}
+.col-5 {
+	width: 50%;
+}
+.col-6 {
+	width: 60%;
+}
+.col-7 {
+	width: 70%;
+}
+.col-8 {
+	width: 80%;
+}
+.col-9 {
+	width: 90%;
+}
+.col-2-2{
+	width: 50%;
+}
+.col-3-3{
+	width: 33.333333%;
+}
+.col-4-4{
+	width: 25%;
+}
+.col-5-5{
+	width: 20%;
+}
+
+
+.ul-ver li, .ul-ver a {
+	display: block;
+	float: left
+}
+.dl-ver dt, .dl-ver dd {
+	display: block;
+	float: left
+}
+.flex-list {
+	display: flex;
+	align-items: center
+}
+.flex-list-top {
+	display: flex;
+	align-items: top
+}
+.flex-list-bottom {
+	display: flex;
+	align-items: bottom
+}
+
+
+.l, .left {
+	float: left
+}
+.c, .center {
+	float: left
+}
+.r, .right {
+	float: right
+}
+.clearfix {
+	zoom: 1
+}
+.clearfix:before, .clearfix:after {
+	display: table;
+	height: 0;
+	line-height: 0;
+	content: ""
+}
+.clearfix:after {
+	clear: both
+}
+
+
+.text-left {
+	text-align: left
+}
+.text-center {
+	text-align: center
+}
+.text-right {
+	text-align: right
+}
+.transition {
+	-webkit-transition: all .3s ease 0s;
+	transition: all .3s ease 0s
+}
+
+
+.font-weight{
+	font-weight: bolder;
+}

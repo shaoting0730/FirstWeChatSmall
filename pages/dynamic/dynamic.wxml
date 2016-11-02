@@ -1,21 +1,213 @@
 <!--dynamic.wxml-->
 <view class="dynamic">
-        <view class="dynamic section_gap swiper_box">
-            <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+
+    <!-- 顶部view -->
+    <view class="swiper-tab">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">日报</view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">精选</view>
+        <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">内涵</view>
+        <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">音乐</view>
+    </view>
+
+    <!-- 日报 -->
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight + 1000}}px" bindchange="bindChange">
+        <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+        <!--  中间轮播图   -->
+                <view class=" section_gap swiper_box">
+                    <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
                         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-                    <block wx:for-items="{{images}}">
+                      <block wx:for-items="{{images}}">
                         <swiper-item catchtap="gos">
                             <image src="{{item}}" class="slide-image"/>
                         </swiper-item>
-                    </block>
-                </swiper>
+                      </block>
+                    </swiper>
+            <view class="themes-box-top">
+                <text class="themes-box-title">专栏</text>
+                <text class="themes-box-subtitle">绝顶的高科技</text>
+            </view>   
+
+            <!-- 日报列表 -->
+            <view class="themes-list">
+
+                <view class="themes-list-box" wx:for="{{dataThemes}}">
+                    <navigator url="../dynamic/themes/themes?id={{item.id}}">
+                        <view class="themes-list-thumbnail">
+                            <image class="themes-list-img" src="{{item.thumbnail}}" />
+                        </view>
+                        <view class="themes-list-main">
+                            <view class="themes-list-name">{{item.name}}</view>
+                            <view class="themes-list-description">{{item.description}}</view>
+                        </view>
+                    </navigator>
+                </view>
+
+            </view> 
+    </view>
+    </scroll-view>
+       </swiper-item>
+
+
+
+
+<!-- 精选  -->
+
+<swiper-item>
+        <scroll-view class="hot-box" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+            <view class = "themes-box-top">
+                <text class="themes-box-title">Audio</text>
+            </view>
+            <audio class = "themes-box-top" poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop>
+                
+            </audio>
+
+            <!--<button type="primary" bindtap="audioPlay">播放</button>
+            <button type="primary" bindtap="audioPause">暂停</button>
+            <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+            <button type="primary" bindtap="audioStart">回到开头</button>-->
+
+       <scroll-view class="list-scroll" scroll-y="true" bindscrolltolower="scrollEnd"> 
+
+        <block wx:for="{{list}}" wx:for-item="song" wx:for-index="index"> 
+          <view class="list {{index == playIndex?'select':''}}" data-id="js_{{index}}" data-hash="{{song.hash}}" bindtap="playSong">
+
+            <view class="icon nobg" wx:if="{{index == playIndex}}">
+                <icon type="success" size="25"/> 
+            </view>
+            <view class="icon" wx:else>{{index+1}}</view>
+            <text class="name">{{song.filename}}</text> 
+          </view>
+        </block>
+
+      </scroll-view>
+      <view class="play-controller" wx:if="{{playIndex > -1}}">
+        <image src="{{play.src}}"></image>
+        <text>{{play.name}}</text>
+      </view>
+   
+    </scroll-view>
+ </swiper-item>
+
+
+<!-- 内涵 -->
+       <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+
+            <!--顶部宣传图-->
+            <view class="img-poster">
+                <image mode="scaleToFill" class="actual-img" src="https://qnmob.doubanio.com/img/files/file-1475046357.jpg?imageView2/2/q/60/w/600/h/0/format/jpg"></image>
+            </view>
+
+            <!--中间button-->
+            <view class="nav">
+                <button type="primary" class="tag" size="mini">经典</button>
+                <button type="primary" class="tag" size="mini">动画</button>
+                <button type="primary" class="tag" size="mini">冷门佳片</button>
+                <button type="primary" class="tag" size="mini">豆瓣高分</button>
+                <button type="primary" class="tag" size="mini">动作</button>
+                <button type="primary" class="tag" size="mini">喜剧</button>
+                <button type="primary" class="tag" size="mini">悬疑</button>
+                <button type="primary" class="tag" size="mini">文艺</button>
+                <button type="primary" class="tag" size="mini">治愈</button>
+                <button type="primary" class="tag" size="mini">科幻</button>
+                <button type="primary" class="tag" size="mini">成长</button>
+                <!--<button type="primary" class="tag" size="mini">华语</button>
+                <button type="primary" class="tag" size="mini">韩国</button>
+                <button type="primary" class="tag" size="mini">日本</button>-->
+            </view>
+
+            <!--中间lable-->
+            <view>
+                <text class = "scroll-text">---------------------</text>
+            </view>
+            <view>
+                <text class = "scroll-text">院线热映</text>
+            </view>
+            <view>
+                <text class = "scroll-text">---------------------</text>
+            </view>
+
+
+
+            <!--底部scrollView-->
+            <scroll-view scroll-x="true" class="col3-img-list">
+                        <view class="col3-img">
+                            <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2351313845.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                        </view>
+                        <view class="col3-img">
+                            <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2324130130.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                        </view>
+                        <view class="col3-img">
+                            <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2332944143.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                        </view>
+                        <view class="col3-img">
+                            <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2367899630.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                        </view>
+                        <view class="col3-img">
+                            <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2346212678.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                        </view>
+                        <view class="col3-img">
+                            <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2332944143.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                        </view>
+                        <view class="col3-img">
+                            <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2351313845.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                        </view>
+            </scroll-view>
+
+   
+    </scroll-view>
+   </swiper-item>
+
+
+
+   <!--音乐-->
+   <swiper-item>
+        <!--<scroll-view class="hot-box" scroll-y="true" upper-threshold="30" lower-threshold="100" bindscrolltolower="scrolltolower">-->
+           <!-- 播放控制区  bindlongtap="playNext"-->
+            <view class="music-main" bindtouchstart="catchtouchstart" bindtouchmove="catchtouchmove" bindtouchend="catchtouchend">
+               <view style="width:100%;">
+                 <view class="music-section__ctn">
+                    <image class="singer-pic" style="width: 500rpx;height:500rpx;transform:rotate({{singerPicRotate}}deg);" 
+                     src="{{singerpic}}" mode="aspectFill" binderror="loadErrorHandler" bindtap="playOrPauseHandler"></image>
+                 </view>
+                 <view style="font-size:15px;margin:20rpx 0;">{{songname}}</view>
+                 <view style="font-size:11px;">{{singername}}</view>
+              <view style="padding-top:20rpx;visibility:{{sliderVisibility}};color:#F7941D;font-size:11px;" >{{curPosition}}</view>
+           
+              </view> 
+            </view>
+   
+        <!--</scroll-view>-->
+        <!-- 底部情绪选择区 -->
+  <view class="music-bottom">
+
+    <view style="text-align:center;padding:16rpx 0;border-bottom:1px solid #eee;">
+      <text class="music-type-title">{{musicTypeTitle}}</text>
+    </view>
+    <!-- for 循环类型   if 条件 -->
+    <view wx:for="{{musicTypes}}">
+        <!-- 这段可以抽离为 template -->
+        <view class="music-section" bindtap="musicTypeHandler" data-index="{{index}}"  wx:if="{{index == selectIndex}}">
+            <view class="music-section__ctn">
+               <image src="{{item.src}}_select.png"></image>
+            </view>            
+            <view class="music-section__title" wx:if="{{index == selectIndex}}"> 
+                <text style="color:#F7941D;">{{item.title}}</text>
+            </view>
         </view>
-        <view class="dynamic dynamic-nav">
-                <block wx:for-items="{{navs}}">
-                    <view class="l-c-c" catchtap="go" data-type="{{item.text}}">
-                        <image src="{{item.image}}" class="slide-image"/>
-                        <text>{{item.text}}</text>
-                    </view>
-                </block>
-        </view> 
+        <view class="music-section" bindtap="musicTypeHandler" data-index="{{index}}"  wx:else>
+             <view class="music-section__ctn">
+               <image src="{{item.src}}.png"></image>
+            </view>
+            <view class="music-section__title"> 
+                <text>{{item.title}}</text>
+            </view>
+        </view>
+           
+    </view>
+    </view>
+ </swiper-item>
+
+    </swiper>
 </view>

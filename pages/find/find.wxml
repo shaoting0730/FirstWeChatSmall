@@ -6,42 +6,46 @@
   interval 间隔时间
   duration 滑动时长
 -->
-
-<view class="dynamic">
+<block wx:if="{{showLoading}}">
+  <view class="page-loading">
+    <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+  </view>
+</block>
+<view class="find">
     <view>
-         <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
-                        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-               <block wx:for-items="{{images}}">
-                   <swiper-item catchtap="gos">
-                      <image src="{{item}}" class="slide-image"/>
-                  </swiper-item>
-                </block>
-         </swiper>
-     </view>
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:key="*this" wx:for-items="{{images}}">
+                <swiper-item catchtap="clickPicture">
+                    <image src="{{item}}" class="slide-image"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
 
     <view class="text">
         <view class="line_flag"></view>
         <text>正在上映</text>
     </view>
 
-<view>
-    <block wx:for-items="{{items}}">
-        <view class="flex item">
-            <view class="item_left">
-                <image src="{{item.image}}"/>
+    <view>
+        <block wx:key="*this" wx:for-items="{{items}}">
+            <view class="flex item" catchtap="cellAction">
+                <view class="item_left">
+                    <image src="{{item.image}}"/>
+                </view>
+                <view class="flex_auto item_middle">
+                    <view><text class="title">{{item.title}}</text></view>
+                    <view><text class="sub_title">{{item.subTitle}}</text></view>
+                    <view><text class="actor">{{item.actor}}</text></view>
+                </view>
+                <view class="item_right">
+                    <view><text class="score">{{item.score}}</text></view>
+                    <view><text catchtap="buyAction" class="action">{{item.action}}</text></view>
+                </view>
             </view>
-            <view class="flex_auto item_middle">
-                <view><text class="title">{{item.title}}</text></view>
-                <view><text class="sub_title">{{item.subTitle}}</text></view>
-                <view><text class="actor">{{item.actor}}</text></view>
-            </view>
-            <view class="item_right">
-                <view><text class="score">{{item.score}}</text></view>
-                <view><text class="action">{{item.action}}</text></view>
-            </view>
-        </view>
-    </block>
- </view>
-       
+        </block>
+    </view>
+    
 
 </view>

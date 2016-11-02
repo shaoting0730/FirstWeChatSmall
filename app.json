@@ -1,14 +1,23 @@
 {
   "pages":[
     "pages/dynamic/dynamic",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/find/find",
+    "pages/find/scrollDetails/scrollDetails",
+    "pages/find/buyTicket/buyTicket",
+    "pages/find/scrollDetailsOne/scrollDetailsOne",
     "pages/information/information",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/mine/detial/detail",
+    "pages/mine/detialBrand/brand",
+    "pages/mine/detialList/list",
+    "pages/dynamic/themes/themes"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarTitleText": "品味点评",
+    "navigationBarTitleText": "动态",
     "navigationBarBackgroundColor": "#FF3030",
     "navigationBarTextStyle":"black"
   },
