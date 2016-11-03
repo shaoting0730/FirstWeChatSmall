@@ -1,10 +1,17 @@
 //app.js
 App({
   onLaunch: function () {
+    // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+  },
+  onShow: function() {
+      // 当小程序启动，或从后台进入前台显示，会触发 onShow
+  },
+  onHide: function() {
+      // 当小程序从前台进入后台，会触发 onHide
   },
   getUserInfo:function(cb){
     var that = this;
@@ -24,8 +31,14 @@ App({
       });
     }
   },
-  globalData:{
-    userInfo:null,
-    songList: require('./data.js')
-  }
+ globalData: {
+        userInfo:null,
+        globalUrl: "http://www.tngou.net/api/cook/",
+        listName: null,
+        listId: null,
+        contentName:null,
+        contentId: null,
+        result:[],
+ 		songList: require('./data.js')
+    }
 })

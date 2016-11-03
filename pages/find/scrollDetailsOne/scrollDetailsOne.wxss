@@ -15,3 +15,16 @@
 .video {
     width: 100%
 }
+.inputClass{
+    float: left;
+    width: 83%;
+}
+.DanmuBtn {
+  height: auto
+}
+.danmuview {
+  margin-top: 5px;
+  margin-bottom: -5px;
+  margin-left: 9px;
+  margin-right: 5px
+}

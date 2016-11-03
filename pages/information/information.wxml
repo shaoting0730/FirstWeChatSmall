@@ -1,10 +1,21 @@
-<!--information.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">资讯</text>
-  </view>
+<scroll-view scroll-y="true" height="100%"
+  scroll-y="true" bindscrolltolower="pullUpLoad">
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="row">
+<navigator wx:for="{{items}}" url="{{url}}?listId={{item.id}}&listName={{item.text}}">
+        <view class="item_size">
+            <image class="img" src="{{item.src}}"></image>
+            <text class="text">{{item.text}}</text>
+        </view>
+</navigator>
 </view>
+
+</scroll-view>

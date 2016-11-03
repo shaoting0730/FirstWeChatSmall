@@ -4,10 +4,13 @@
   <loading hidden="{{hidden}}" >
     加载中...
   </loading>
-
+  <view class="danmuview">
+       <input class="inputClass" placeholder-style="color:red" style="font-size:15px" placeholder="输入弹幕" bindblur="bindInputBlur"/>
+       <button bindtap="bindSendDanmu" class="DanmuBtn" size="mini">发送</button>
+  </view>
   <view class= "card" wx:for = "{{items}}">
     <view  data-url="{{item.url}}" bindtap = "onItemClick">
-       <video src="{{item.mp4_url}}" class = "video"></video>
+       <video id="myVideo" src="{{item.mp4_url}}" class = "video" binderror="videoErrorCallback" enable-danmu danmu-btn controls danmu-list="{{danmuList}}"></video>
        <view class="title">{{item.topicName}}</view>
        <view >{{item.title}}</view>
     </view>

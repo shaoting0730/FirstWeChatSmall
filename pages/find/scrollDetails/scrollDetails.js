@@ -14,7 +14,7 @@ Page({
     displayList: displayList,
     src: playList[0].src,
     name: playList[0].songname,
-    author: '寒江雪',
+    author: '九象网络',
     time: '',
     poster: '../../images/hanjiangxue.jpg',
     status: 'play',

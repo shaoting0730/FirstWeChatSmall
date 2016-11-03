@@ -9,6 +9,8 @@
     "pages/find/scrollDetailsOne/scrollDetailsOne",
     "pages/information/information",
     "pages/mine/mine",
+    "pages/information/list",
+    "pages/information/content",
     "pages/mine/detial/detail",
     "pages/mine/detialBrand/brand",
     "pages/mine/detialList/list",
@@ -49,5 +51,9 @@
       "text": "我的"
     }]
   },
-  "debug": true
+  "debug": true,
+      "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
 }

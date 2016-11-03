@@ -32,7 +32,7 @@ audio{
   bottom: 0;
   left: 0;
   right: 0;
-  background: #31c27c;
+  background: red;
   color: #fff;
 }
 .song-info{
