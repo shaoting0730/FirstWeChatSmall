@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-#PWWeChat
-=======
+
 下班之余,和同事一起初试微信小程序.<br/>
 ------------------------特别申明----------------------------------<br/>
 ##本demo所有界面均是采用github上的布局代码,接口也是网络上的,我们只是在此基础上稍微修改
@@ -14,4 +12,4 @@
 ![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/4.png) 
 ![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/5.png) 
 ![image](https://github.com/pheromone/FirstWeChat--github/blob/master/githubImg/6.png) 
->>>>>>> origin/master
+
